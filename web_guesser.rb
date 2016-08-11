@@ -9,8 +9,9 @@ get '/' do
   elsif params['guess'].to_i < number
     message = 'To low!'
   else
-    message = 'You got it right!'
+    message = "You got it right! The secret number is #{number}"
   end
-  erb :index, :locals => {:number => number, :message => message}
+
+  erb :index, :locals => {:message => message}
 
 end
